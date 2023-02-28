@@ -1,10 +1,11 @@
 import React from 'react';
-import Dashboard from './components/Dashboard';
+import SideNavBar from './components/SideNavBar';
 
 function App() {
   return (
     <div className="">
-      <Dashboard/>
+      <SideNavBar/>
+      
     </div>
   );
 }
