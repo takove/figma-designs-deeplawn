@@ -13,17 +13,19 @@ import {
   EllipsisVerticalIcon,
 } from "@heroicons/react/24/outline";
 import Dashboard from "../pages/Dashboard";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Search", href: "#", icon: MagnifyingGlassIcon, current: false },
+  { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
+  { name: "Search", href: "/search", icon: MagnifyingGlassIcon, current: false },
   {
     name: "Services",
     href: "#",
     icon: AdjustmentsHorizontalIcon,
     current: false,
   },
-  { name: "Service Area", href: "#", icon: MapIcon, current: false },
+  { name: "Service Area", href: "/service-area", icon: MapIcon, current: false },
   { name: "Integrations", href: "#", icon: CodeBracketIcon, current: false },
   { name: "Branding", href: "#", icon: IdentificationIcon, current: false },
   { name: "Measurements", href: "#", icon: CalculatorIcon, current: false },
@@ -107,9 +109,25 @@ export default function SideNavBar() {
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
                       {navigation.map((item) => (
+                        // <Link
+                        //   key={item.name}
+                        //   to={item.name}
+                        //   className={classNames(
+                        //     item.current
+                        //       ? "bg-white text-green-500"
+                        //       : "text-gray-600 hover:text-green-500 hover:bg-white",
+                        //     "group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                        //   )}
+                        //  >
+                        //   <item.icon
+                        //     className="mr-4 h-6 w-6 flex-shrink-0"
+                        //     aria-hidden="true"
+                        //   />
+                        //   {item.name}
+                        //  </Link>
                         <a
                           key={item.name}
-                          href={item.href}
+                          href="/"
                           className={classNames(
                             item.current
                               ? "bg-white text-green-500"
