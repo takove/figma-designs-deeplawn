@@ -12,31 +12,31 @@ import {
   IdentificationIcon,
   EllipsisVerticalIcon,
 } from "@heroicons/react/24/outline";
-import Dashboard from "../pages/Dashboard";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "/", icon: HomeIcon, current: true },
+  { name: "Dashboard", href: "/", icon: HomeIcon, current: false },
   { name: "Search", href: "/search", icon: MagnifyingGlassIcon, current: false },
   {
     name: "Services",
-    href: "#",
+    href: "/services",
     icon: AdjustmentsHorizontalIcon,
     current: false,
   },
   { name: "Service Area", href: "/service-area", icon: MapIcon, current: false },
-  { name: "Integrations", href: "#", icon: CodeBracketIcon, current: false },
-  { name: "Branding", href: "#", icon: IdentificationIcon, current: false },
-  { name: "Measurements", href: "#", icon: CalculatorIcon, current: false },
-  { name: "Marketing", href: "#", icon: MegaphoneIcon, current: false },
+  { name: "Integrations", href: "/integrations", icon: CodeBracketIcon, current: false },
+  { name: "Branding", href: "/branding", icon: IdentificationIcon, current: false },
+  { name: "Measurements", href: "/measurements", icon: CalculatorIcon, current: false },
+  { name: "Marketing", href: "marketing/", icon: MegaphoneIcon, current: false },
 ];
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SideNavBar() {
+export default function SideNavBar(props: any) {
+  const page = props.page
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -108,39 +108,23 @@ export default function SideNavBar() {
                       />
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
-                      {navigation.map((item) => (
-                        // <Link
-                        //   key={item.name}
-                        //   to={item.name}
-                        //   className={classNames(
-                        //     item.current
-                        //       ? "bg-white text-green-500"
-                        //       : "text-gray-600 hover:text-green-500 hover:bg-white",
-                        //     "group flex items-center px-2 py-2 text-base font-medium rounded-md"
-                        //   )}
-                        //  >
-                        //   <item.icon
-                        //     className="mr-4 h-6 w-6 flex-shrink-0"
-                        //     aria-hidden="true"
-                        //   />
-                        //   {item.name}
-                        //  </Link>
-                        <a
-                          key={item.name}
-                          href="/"
+                      {navigation.map((item:any) => (
+                        <Link
+                          key={item.id}
+                          to={item.href}
                           className={classNames(
                             item.current
                               ? "bg-white text-green-500"
                               : "text-gray-600 hover:text-green-500 hover:bg-white",
                             "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                           )}
-                        >
+                         >
                           <item.icon
                             className="mr-4 h-6 w-6 flex-shrink-0"
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
+                         </Link>                        
                       ))}
                     </nav>
                   </div>
@@ -175,7 +159,7 @@ export default function SideNavBar() {
         {/* Static sidebar for desktop */}
         <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex min-h-0 flex-1 flex-col bg-gray-50 ">
+          <div className="flex min-h-0 flex-1 flex-col bg-greenish-gray ">
             <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
               <div className="flex flex-shrink-0 items-center px-4">
                 <img
@@ -241,7 +225,7 @@ export default function SideNavBar() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <Dashboard/>
+          {page}
         </div>
       </div>
     </>

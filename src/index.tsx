@@ -17,7 +17,36 @@ import Services from './pages/Services';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App/>
+    element: <App/>,
+    errorElement: <h1>404</h1>
+  },  
+  {
+    path: '/branding',
+    element: <Branding/>
+  },  
+  {
+    path: '/integrations',
+    element: <Integrations/>
+  },  
+  {
+    path: '/marketing',
+    element: <Marketing/>
+  },  
+  {
+    path: '/measurements',
+    element: <Measurements/>
+  },  
+  {
+    path: '/search',
+    element: <Search/>
+  },  
+  {
+    path: '/service-area',
+    element: <ServiceArea/>
+  },  
+  {
+    path: '/services',
+    element: <Services/>
   },  
 ])
 

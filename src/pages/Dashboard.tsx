@@ -1,4 +1,5 @@
 import React from "react";
+import SideNavBar from "../components/SideNavBar";
 import Stats from "../components/Stats";
 import TableBody from "../components/TableBody";
 
@@ -27,8 +28,8 @@ export default function Dashboard() {
     {address:"2124 S St Marys St, Siou...", ownersName:"Joel Northup", date:"24th Apr 2022", amountPaid:"$2399", type:"Estimate sent"}, 
     {address:"2124 S St Marys St, Siou...", ownersName:"Joel Northup", date:"24th Apr 2022", amountPaid:"$2399", type:"Estimate sent"}
   ]
-  return (
-    <>
+  const dashboard = (
+    <div>
       <main className="flex-1">
         <div className="py-6">
           <div className=" max-w-full px-4 sm:px-6 lg:px-8">
@@ -122,6 +123,12 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
+    </div>
+  )
+  
+  return (
+    <>
+      <SideNavBar page={dashboard}/>      
     </>
   );
 }
