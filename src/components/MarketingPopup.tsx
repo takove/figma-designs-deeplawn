@@ -1,9 +1,12 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
-export default function MarketingPopup() {
-  const [open, setOpen] = useState(true)
+export default function MarketingPopup({
+  open,
+  setOpen
+}
+) {
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -42,7 +45,7 @@ export default function MarketingPopup() {
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.
+                        This is a test to see how this works.
                       </p>
                     </div>
                   </div>

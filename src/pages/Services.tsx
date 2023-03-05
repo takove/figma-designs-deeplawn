@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SideNavBar from '../components/SideNavBar';
 import SearchBar from "../components/SearchBar";
-import TemplateButton from "../components/TemplateButton";
+// import TemplateButton from "../components/TemplateButton";
+import SearchButton from "../components/SearchButton";
 import Tabs from "../components/Tabs";
+import MarketingPopup from '../components/MarketingPopup';
 
 export default function Services () {
-    const services = (
+  const [open, setOpen] = useState(false)
+  const tabs = [
+    { name: 'Services', href: '#', current: false },
+    { name: 'Packages', href: '#', current: false },
+    { name: 'Discounts', href: '#', current: true },
+  ] 
+  const services = (
         <div>
           <main className="flex-1">
             <div className="py-6">
@@ -15,9 +23,17 @@ export default function Services () {
               <div className=" max-w-full px-4 sm:px-6 lg:px-8">
                 {/* Replace with your content */}
     
-                <Tabs/>
+                <Tabs tabs={tabs}/>
                 <SearchBar/>
-                <TemplateButton />
+                {/* <TemplateButton /> */}
+                <SearchButton
+                open={open}
+                setOpen={setOpen}
+                />
+                <MarketingPopup 
+                open={open}
+                setOpen={setOpen}
+                />
                 {/* End Replace */}
               </div>
             </div>
