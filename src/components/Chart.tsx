@@ -34,16 +34,18 @@ const chart =
 
 export default function Chart(props:any) {
   return (
-    <div className="flex object-scale-down">
-        {chart.map((data) => (
-            <div className="w-1/2">
-            <span className="flex flex-row items-center ml-2 mb-2 font-bold text-[14px] text-oceanblue">
-            <CurrencyDollarIcon className="w-5 h-5 mr-2" color="rgba(0, 217, 84,1)" />
-            Sales
+    <div>
+        <span className="flex flex-row items-center ml-2 mb-2 font-bold text-[14px] text-oceanblue">
+                <CurrencyDollarIcon className="w-5 h-5 mr-2" color="rgba(0, 217, 84,1)" />
+                Sales
             </span>
-            <Line data={data} />
+        <div className="flex object-scale-down">
+            {chart.map((data) => (
+                <div className="w-1/2">
+                <Line data={data} />
+            </div>
+            ))}
         </div>
-        ))}
     </div>
   );
 }
