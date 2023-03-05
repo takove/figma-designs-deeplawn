@@ -24,8 +24,7 @@ export default function Tabs() {
                                 <select
                                 id="current-tab"
                                 name="current-tab"
-                                // className="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600"
-                                className="px-4 py-2 text-sm font-medium text-gray-600   rounded-l-lg hover:bg-white hover:text-green-500 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-green-500"
+                                className="px-4 py-2 text-sm font-medium text-gray-600 rounded-l-lg hover:bg-white hover:text-green-500 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-green-500"
                                 // defaultValue={tabs.find((tab) => tab.current).name}
                                 >
                                 {tabs.map((tab) => (
@@ -43,7 +42,7 @@ export default function Tabs() {
                                     tab.current
                                     ? 'border-green-500 text-green-600'
                                     : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
-                                    'px-4 py-2 text-sm font-medium text-gray-600   rounded-l-lg hover:bg-white hover:text-green-500 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-green-500'
+                                    'px-4 py-2 text-sm font-medium text-gray-600 rounded-l-lg rounded-r-lg hover:bg-white hover:text-green-500 focus:z-10 focus:text-green-500'
                                     
                                 )}
                                 aria-current={tab.current ? 'page' : undefined}
