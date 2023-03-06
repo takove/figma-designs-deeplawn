@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline';
 import React from "react";
 import { Link } from "react-router-dom";
+import MenuPopup from './MenuPopup';
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon, current: false },
@@ -190,6 +191,7 @@ export default function SideNavBar(props: any) {
               </nav>
             </div>
             <div className="flex flex-shrink-0 p-4 ">
+              
               <a
                 href="/"
                 className="group block w-full flex-shrink-0 bg-white rounded-md p-3"
@@ -207,8 +209,8 @@ export default function SideNavBar(props: any) {
                       </p>
                     </div>
                   </div>
-
-                  <EllipsisVerticalIcon className="h-6 w-6 text-gray-500" />
+                  <MenuPopup/>
+                  {/* <EllipsisVerticalIcon className="h-6 w-6 text-gray-500" /> */}
                 </div>
               </a>
             </div>
