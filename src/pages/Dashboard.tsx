@@ -1,6 +1,7 @@
 import React from "react";
 import SideNavBar from "../components/SideNavBar";
 import Stats from "../components/Stats";
+import Charts from "../components/Chart";
 import TableBody from "../components/TableBody";
 
 export default function Dashboard() {
@@ -40,6 +41,8 @@ export default function Dashboard() {
           <div className=" max-w-full px-4 sm:px-6 lg:px-8">
             {/* Replace with your content */}
             <Stats stats={stats} />
+            
+            <Charts/>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
               <table className="w-full text-sm text-left text-gray-500 ">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50  ">
