@@ -36,9 +36,9 @@ export default function Chart(props:any) {
   return (
     <div>
         <span className="flex flex-row items-center ml-2 mb-2 font-bold text-[14px] text-oceanblue">
-            <CurrencyDollarIcon className="w-5 h-5 mr-2" color="rgba(0, 217, 84,1)" />
-            Sales
-        </span>
+                <CurrencyDollarIcon className="w-5 h-5 mr-2" color="rgba(0, 217, 84,1)" />
+                Sales
+            </span>
         <div className="flex object-scale-down">
             {chart.map((data) => (
                 <div className="w-1/2">
