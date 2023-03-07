@@ -5,6 +5,8 @@ import SearchBar from "../components/SearchBar";
 import SearchButton from "../components/SearchButton";
 import Tabs from "../components/Tabs";
 import MarketingPopup from '../components/MarketingPopup';
+import ServiceCards from '../components/ServiceCards';
+import ImportButton from '../components/ImportButton';
 
 export default function Services () {
   const [open, setOpen] = useState(false)
@@ -26,6 +28,10 @@ export default function Services () {
                 <Tabs tabs={tabs}/>
                 <SearchBar/>
                 {/* <TemplateButton /> */}
+                <ImportButton
+                open={open}
+                setOpen={setOpen}
+                />
                 <SearchButton
                 open={open}
                 setOpen={setOpen}
@@ -34,6 +40,7 @@ export default function Services () {
                 open={open}
                 setOpen={setOpen}
                 />
+                <ServiceCards/>
                 {/* End Replace */}
               </div>
             </div>
