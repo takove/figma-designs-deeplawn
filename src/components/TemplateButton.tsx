@@ -1,7 +1,7 @@
 import React from 'react'
 import {PlusIcon} from '@heroicons/react/24/solid'
 
-export default function SearchButton(data) {
+export default function TemplateButton(data) {
   return (  
 
     <button
