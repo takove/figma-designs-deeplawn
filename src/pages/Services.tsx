@@ -7,6 +7,7 @@ import SearchBar from "../components/SearchBar";
 import SearchButton from "../components/SearchButton";
 import MarketingPopup from '../components/MarketingPopup';
 import ProgramCards from '../components/ProgramCards';
+import Discounts from '../components/Discounts';
 import ImportButton from '../components/ImportButton';
 
 export default function Services () {
@@ -70,7 +71,24 @@ export default function Services () {
                     />
                     <ProgramCards/>
                 </div>
-            ): null }
+            ): activeTab === tabs[2].name ? (
+              <div>
+                  <SearchBar/>
+                  <ImportButton
+                  open={open}
+                  setOpen={setOpen}
+                  />
+                  <SearchButton
+                  open={open}
+                  setOpen={setOpen}
+                  />
+                  <MarketingPopup 
+                  open={open}
+                  setOpen={setOpen}
+                  />
+                  <Discounts/>
+              </div>
+              ) : null }
                 {/* <ServiceCards/> */}
                 {/* End Replace */}
               </div>
