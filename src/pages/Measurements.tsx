@@ -5,6 +5,8 @@ import SearchButton from "../components/SearchButton";
 import TableBody from "../components/TableBody";
 import Tabs from "../components/Tabs";
 import MarketingPopup from '../components/MarketingPopup';
+import DateDropdown from '../components/DateDropdown';
+import SortDropdown from '../components/SortDropdown';
 
 export default function Measurements() {
   const [open, setOpen] = useState(false)
@@ -57,6 +59,13 @@ export default function Measurements() {
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
                 />
+                <div className="justify-end max-w-full px-4 sm:px-6 lg:px-8 grid grid-cols-3">
+                  <SearchBar/>
+                  <div className="justify-end max-w-full lg:px-8 py-4">
+                    <SortDropdown/>
+                    <DateDropdown/>
+                  </div>
+                </div>
                 <SearchBar/>
                 <TableBody table={table}/>
                 <MarketingPopup 
