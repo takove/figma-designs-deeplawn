@@ -5,7 +5,6 @@ import ServiceCards from '../components/ServiceCards';
 import SearchBar from "../components/SearchBar";
 // import TemplateButton from "../components/TemplateButton";
 import SearchButton from "../components/SearchButton";
-import MarketingPopup from '../components/MarketingPopup';
 import ProgramCards from '../components/ProgramCards';
 import Discounts from '../components/Discounts';
 import ImportButton from '../components/ImportButton';
@@ -48,10 +47,6 @@ export default function Services () {
                     open={open}
                     setOpen={setOpen}
                     />
-                    <MarketingPopup 
-                    open={open}
-                    setOpen={setOpen}
-                    />
                     <ServiceCards/>
                 </div>
             ) : activeTab === tabs[1].name ? (
@@ -65,10 +60,6 @@ export default function Services () {
                     open={open}
                     setOpen={setOpen}
                     />
-                    <MarketingPopup 
-                    open={open}
-                    setOpen={setOpen}
-                    />
                     <ProgramCards/>
                 </div>
             ): activeTab === tabs[2].name ? (
@@ -79,10 +70,6 @@ export default function Services () {
                   setOpen={setOpen}
                   />
                   <SearchButton
-                  open={open}
-                  setOpen={setOpen}
-                  />
-                  <MarketingPopup 
                   open={open}
                   setOpen={setOpen}
                   />
