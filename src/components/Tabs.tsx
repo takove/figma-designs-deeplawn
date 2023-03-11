@@ -3,11 +3,6 @@ import React, {useState} from 'react';
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
-//   const tabs = [
-//     { name: 'Orders', href: '#', current: false },
-//     { name: 'Leads', href: '#', current: false },
-//     { name: 'Measurments', href: '#', current: true },
-//   ]
 export default function Tabs({
     activeTab,
     setActiveTab,

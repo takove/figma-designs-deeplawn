@@ -1,9 +1,7 @@
 import React from "react";
 import SideNavBar from "../components/SideNavBar";
-import Tabs from "../components/Tabs";
 
 export default function Integrations() {
-  const tabs = [{title:"Widget Codes", href:'/'}, {title: 'Integrations', href:'/'}, {title:'Add-ons', href:'/'}]
   const integrations = (
     <div>
       <main className="flex-1">
@@ -14,7 +12,6 @@ export default function Integrations() {
           <div className=" max-w-full px-4 sm:px-6 lg:px-8">
             {/* Replace with your content */}
 
-            <Tabs tabs={tabs}/>
             
 
             {/* End Replace */}
