@@ -1,22 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SideNavBar from '../components/SideNavBar';
+import Templates from '../components/Templates';
+import SearchButton from '../components/SearchButton';
 import Tabs from '../components/Tabs';
+import MarketingPopup from '../components/MarketingPopup';
 
 export default function Marketing () {
-  const tabs = [{title:"Subsctiptions", href:'/'}, {title: 'Account', href:'/'}, {title:'Payment Info', href:'/'}, {title:'Billing History', href:'/'}]
-    const marketing = (
+  const [open, setOpen] = useState(false)
+  const tabs = [
+    { name: 'Templates', href: '#', current: false },
+    { name: 'Density Blaster', href: '#', current: false },
+    { name: 'Campaigns', href: '#', current: true },
+  ] 
+  const [activeTab, setActiveTab] = useState<any>(tabs[0].name);
+  useEffect(() => {
+    setActiveTab(activeTab);
+    console.log("test")
+  }, [activeTab]);
+  const marketing = (
         <div>
           <main className="flex-1">
             <div className="py-6">
-              <div className=" max-w-full px-4 sm:px-6 lg:px-8">
+              <div className=" max-w-full px-4 sm:px-6 lg:px-8 grid grid-cols-2">
                 <h1 className="text-2xl font-bold text-gray-900">Marketing</h1>
+                <div className="justify-end">
+                  <SearchButton 
+                  open={open}
+                  setOpen={setOpen}
+                  />
+                </div>
               </div>
               <div className=" max-w-full px-4 sm:px-6 lg:px-8">
                 {/* Replace with your content */}
-    
-                <Tabs tabs={tabs}/>
-    
-                {/* End Replace */}
+                <Tabs 
+                tabs={tabs} 
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                />
+                <Templates/>
+                <MarketingPopup 
+                open={open}
+                setOpen={setOpen}
+                />
+               {/* End Replace */}
               </div>
             </div>
           </main>
