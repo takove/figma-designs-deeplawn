@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SideNavBar from '../components/SideNavBar';
 import Templates from '../components/Templates';
 import SearchButton from '../components/SearchButton';
@@ -12,6 +12,11 @@ export default function Marketing () {
     { name: 'Density Blaster', href: '#', current: false },
     { name: 'Campaigns', href: '#', current: true },
   ] 
+  const [activeTab, setActiveTab] = useState<any>(tabs[0].name);
+  useEffect(() => {
+    setActiveTab(activeTab);
+    console.log("test")
+  }, [activeTab]);
   const marketing = (
         <div>
           <main className="flex-1">
@@ -27,7 +32,11 @@ export default function Marketing () {
               </div>
               <div className=" max-w-full px-4 sm:px-6 lg:px-8">
                 {/* Replace with your content */}
-                <Tabs tabs={tabs}/>
+                <Tabs 
+                tabs={tabs} 
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                />
                 <Templates/>
                 <MarketingPopup 
                 open={open}

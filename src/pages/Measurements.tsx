@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import SideNavBar from '../components/SideNavBar';
 import SearchBar from "../components/SearchBar";
 import SearchButton from "../components/SearchButton";
@@ -15,6 +15,11 @@ export default function Measurements() {
     { name: 'Leads', href: '#', current: false },
     { name: 'Measurments', href: '#', current: true },
   ]
+  const [activeTab, setActiveTab] = useState<any>(tabs[0].name);
+  useEffect(() => {
+    setActiveTab(activeTab);
+    console.log("test")
+  }, [activeTab]);
   const table = [
     {address:"2124 S St Marys St, Siou...", ownersName:"Joel Northup", date:"24th Apr 2022", amountPaid:"$2399", type:"Estimate sent"}, 
     {address:"2124 S St Marys St, Siou...", ownersName:"Joel Northup", date:"24th Apr 2022", amountPaid:"$2399", type:"Estimate sent"}, 
@@ -49,7 +54,11 @@ export default function Measurements() {
               </div>
               <div className=" max-w-full px-4 sm:px-6 lg:px-8">
                 {/* Replace with your content */}
-                <Tabs tabs={tabs}/>
+                <Tabs 
+                tabs={tabs} 
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                />
                 <div className="justify-end max-w-full px-4 sm:px-6 lg:px-8 grid grid-cols-3">
                   <SearchBar/>
                   <div className="justify-end max-w-full lg:px-8 py-4">
@@ -57,6 +66,7 @@ export default function Measurements() {
                     <DateDropdown/>
                   </div>
                 </div>
+                <SearchBar/>
                 <TableBody table={table}/>
                 <MarketingPopup 
                 open={open}
