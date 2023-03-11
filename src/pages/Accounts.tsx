@@ -53,7 +53,7 @@ export default function Accounts() {
             />
             {activeTab === tabs[0].name ? (
                 <div>
-                    <div className="py-6">
+                    <div className="py-4">
                       Payments
                     </div>
                     <Payments table={table}/>
@@ -69,8 +69,8 @@ export default function Accounts() {
                 </div>
             ) : activeTab === tabs[1].name ? (
                 <div>
-                    <div className="py-6">
-                      Account
+                    <div className="py-4">
+                      Your Profile
                     </div>
                     <Account/>
                     {/* <SearchBar/>
@@ -103,7 +103,7 @@ export default function Accounts() {
               </div>
             ) : activeTab === tabs[3].name ? (
               <div>
-                <div className="py-6">
+                <div className="py-4">
                   Billing History
                 </div>
                 
