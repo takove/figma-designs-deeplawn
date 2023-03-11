@@ -10,6 +10,7 @@ import Branding from './pages/Branding';
 import Integrations from './pages/Integrations';
 import Marketing from './pages/Marketing';
 import Measurements from './pages/Measurements';
+import Accounts from './pages/Accounts';
 import Search from './pages/Search';
 import ServiceArea from './pages/ServiceArea';
 import Services from './pages/Services';
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: '/services',
     element: <Services/>
+  },  
+  {
+    path: '/accounts',
+    element: <Accounts/>
   },  
 ])
 
