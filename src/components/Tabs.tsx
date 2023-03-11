@@ -10,7 +10,7 @@ export default function Tabs(props:any) {
           <a
             href={tab.href}
             aria-current="page"
-            className="px-4 py-2 text-sm font-medium text-gray-600   rounded-l-lg hover:bg-white hover:text-green-500 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-green-500"
+            className="px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-white hover:shadow-lg hover:text-green-500 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-green-500"
           >
             {tab.title}
           </a>
