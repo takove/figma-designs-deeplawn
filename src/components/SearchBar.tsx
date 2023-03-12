@@ -5,7 +5,7 @@ const handleSubmit = () => {
     console.log("Test");
   }
 
-export default function SearcBar() {
+export default function SearchBar() {
     return (
         
         <div className="relative py-4">
