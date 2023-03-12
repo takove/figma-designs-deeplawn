@@ -11,25 +11,24 @@ import {
   CalculatorIcon,
   IdentificationIcon,
   EllipsisVerticalIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 import React from "react";
-import { Link } from "react-router-dom";
-import MenuPopup from './MenuPopup';
+import { NavLink } from "react-router-dom";
+import MenuPopup from "./MenuPopup";
 
 const navigation = [
-  { name: "Dashboard", href: "/", icon: HomeIcon, current: false },
-  { name: "Search", href: "/search", icon: MagnifyingGlassIcon, current: false },
+  { name: "Dashboard", href: "/", icon: HomeIcon },
+  { name: "Search", href: "/search", icon: MagnifyingGlassIcon },
   {
     name: "Services",
     href: "/services",
     icon: AdjustmentsHorizontalIcon,
-    current: false,
   },
-  { name: "Service Area", href: "/service-area", icon: MapIcon, current: false },
-  { name: "Integrations", href: "/integrations", icon: CodeBracketIcon, current: false },
-  { name: "Branding", href: "/branding", icon: IdentificationIcon, current: false },
-  { name: "Measurements", href: "/measurements", icon: CalculatorIcon, current: false },
-  { name: "Marketing", href: "marketing/", icon: MegaphoneIcon, current: false },
+  { name: "Service Area", href: "/service-area", icon: MapIcon },
+  { name: "Integrations", href: "/integrations", icon: CodeBracketIcon },
+  { name: "Branding", href: "/branding", icon: IdentificationIcon },
+  { name: "Measurements", href: "/measurements", icon: CalculatorIcon },
+  { name: "Marketing", href: "/marketing", icon: MegaphoneIcon },
 ];
 
 function classNames(...classes: any) {
@@ -37,19 +36,11 @@ function classNames(...classes: any) {
 }
 
 export default function SideNavBar(props: any) {
-  const page = props.page
+  const page = props.page;
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
@@ -96,7 +87,6 @@ export default function SideNavBar(props: any) {
                         onClick={() => setSidebarOpen(false)}
                       >
                         <span className="sr-only">Close sidebar</span>
-                        
                       </button>
                     </div>
                   </Transition.Child>
@@ -109,28 +99,39 @@ export default function SideNavBar(props: any) {
                       />
                     </div>
                     <nav className="mt-5 space-y-1 px-2">
-                      {navigation.map((item:any) => (
-                        <Link
+                      {navigation.map((item: any) => (
+                        <NavLink
                           key={item.id}
                           to={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-white text-green-500"
-                              : "text-gray-600 hover:text-green-500 hover:bg-white",
-                            "group flex items-center px-2 py-2 text-base font-medium rounded-md"
-                          )}
-                         >
+                          className={({ isActive }) => {
+                            return (
+                              "group flex items-center px-2 py-2 text-base font-medium rounded-md" +
+                              (isActive
+                                ? " bg-white text-green-500"
+                                : " text-gray-600 hover:text-green-500 hover:bg-white")
+                            );
+                          }}
+                          // className={classNames(
+                          //   item.current
+                          //     ? "bg-white text-green-500"
+                          //     : "text-gray-600 hover:text-green-500 hover:bg-white",
+                          //   "group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                          // )}
+                        >
                           <item.icon
                             className="mr-4 h-6 w-6 flex-shrink-0"
                             aria-hidden="true"
                           />
                           {item.name}
-                         </Link>                        
+                        </NavLink>
                       ))}
                     </nav>
                   </div>
-                  <div className="flex flex-shrink-0 p-4">                    
-                    <a href="/" className="group block w-full flex-shrink-0 bg-white rounded-md p-3">
+                  <div className="flex flex-shrink-0 p-4">
+                    <a
+                      href="/"
+                      className="group block w-full flex-shrink-0 bg-white rounded-md p-3"
+                    >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
                           <img
@@ -138,11 +139,11 @@ export default function SideNavBar(props: any) {
                             src="https://this-person-does-not-exist.com/img/avatar-11979b1e2e9d97c3dd0197c6c4349a7d.jpg"
                             alt=""
                           />
-                        <div className="ml-3">
-                          <p className="text-base font-medium text-gray-500">
-                            Xslet Company
-                          </p>
-                        </div>
+                          <div className="ml-3">
+                            <p className="text-base font-medium text-gray-500">
+                              Xslet Company
+                            </p>
+                          </div>
                         </div>
                         <EllipsisVerticalIcon className="h-6 w-6 text-gray-500" />
                       </div>
@@ -171,27 +172,28 @@ export default function SideNavBar(props: any) {
               </div>
               <nav className="mt-5 flex-1 space-y-1 px-2">
                 {navigation.map((item) => (
-                  <a
+                  <NavLink
                     key={item.name}
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-white text-green-500"
-                        : "text-gray-600 hover:text-green-500 hover:bg-white",
-                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                    )}
+                    to={item.href}
+                    className={({ isActive }) => {
+                      return (
+                        "group flex items-center px-2 py-2 text-base font-medium rounded-md" +
+                        (isActive
+                          ? " bg-white text-green-500"
+                          : " text-gray-600 hover:text-green-500 hover:bg-white")
+                      );
+                    }}
                   >
                     <item.icon
                       className="mr-3 h-6 w-6 flex-shrink-0"
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </NavLink>
                 ))}
               </nav>
             </div>
             <div className="flex flex-shrink-0 p-4 ">
-              
               <a
                 href="/"
                 className="group block w-full flex-shrink-0 bg-white rounded-md p-3"
@@ -209,7 +211,7 @@ export default function SideNavBar(props: any) {
                       </p>
                     </div>
                   </div>
-                  <MenuPopup/>
+                  <MenuPopup />
                   {/* <EllipsisVerticalIcon className="h-6 w-6 text-gray-500" /> */}
                 </div>
               </a>
