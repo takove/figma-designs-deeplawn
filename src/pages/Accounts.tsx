@@ -8,7 +8,7 @@ import Account from "../components/Account";
 import Tabs from "../components/Tabs";
 
 export default function Accounts() {
-  const [open, setOpen] = useState(false)
+  
   const tabs = [
     { name: 'Payments', href: '#', current: false },
     { name: 'Account', href: '#', current: false },

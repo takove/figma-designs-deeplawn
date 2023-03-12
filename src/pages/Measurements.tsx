@@ -66,7 +66,6 @@ export default function Measurements() {
                     <DateDropdown/>
                   </div>
                 </div>
-                <SearchBar/>
                 <TableBody table={table}/>
                 <MarketingPopup 
                 open={open}

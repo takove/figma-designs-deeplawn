@@ -49,7 +49,7 @@ export default function Services () {
                     />
                     <ServiceCards/>
                 </div>
-            ) : activeTab === tabs[1].name ? (
+                ) : activeTab === tabs[1].name ? (
                 <div>
                     <SearchBar/>
                     <ImportButton
@@ -62,8 +62,8 @@ export default function Services () {
                     />
                     <ProgramCards/>
                 </div>
-            ): activeTab === tabs[2].name ? (
-              <div>
+                ): activeTab === tabs[2].name ? (
+                <div>
                   <SearchBar/>
                   <ImportButton
                   open={open}
@@ -74,8 +74,8 @@ export default function Services () {
                   setOpen={setOpen}
                   />
                   <Discounts/>
-              </div>
-              ) : null }
+                </div>
+                ) : null }
                 {/* <ServiceCards/> */}
                 {/* End Replace */}
               </div>

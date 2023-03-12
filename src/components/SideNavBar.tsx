@@ -31,9 +31,6 @@ const navigation = [
   { name: "Marketing", href: "/marketing", icon: MegaphoneIcon },
 ];
 
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function SideNavBar(props: any) {
   const page = props.page;

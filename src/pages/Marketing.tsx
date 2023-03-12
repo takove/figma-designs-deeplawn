@@ -4,6 +4,7 @@ import Templates from '../components/Templates';
 import SearchButton from '../components/SearchButton';
 import Tabs from '../components/Tabs';
 import MarketingPopup from '../components/MarketingPopup';
+import CreateTemplate from '../components/CreateTemplate';
 
 export default function Marketing () {
   const [open, setOpen] = useState(false)
@@ -38,6 +39,7 @@ export default function Marketing () {
                 setActiveTab={setActiveTab}
                 />
                 <Templates/>
+                <CreateTemplate/>
                 <MarketingPopup 
                 open={open}
                 setOpen={setOpen}

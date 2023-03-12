@@ -14,6 +14,7 @@ import Accounts from './pages/Accounts';
 import Search from './pages/Search';
 import ServiceArea from './pages/ServiceArea';
 import Services from './pages/Services';
+import Tutorials from './pages/Tutorials';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
     path: '/accounts',
     element: <Accounts/>
   },  
+  {
+    path: '/tutorials',
+    element: <Tutorials/>
+  },
 ])
 
 const root = ReactDOM.createRoot(

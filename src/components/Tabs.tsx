@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
 export default function Tabs({
     activeTab,
     setActiveTab,
     tabs
 }) {
-    const [open, setOpen] = useState(false);
     //const tabs = props.tabs;
     console.log(tabs)
     const [somethingChanged, setSomethingChanged] = useState(false);

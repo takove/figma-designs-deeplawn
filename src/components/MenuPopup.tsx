@@ -1,6 +1,10 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
+import { EllipsisVerticalIcon,
+  UserIcon,
+  VideoCameraIcon,
+  ArrowDownTrayIcon,
+ } from '@heroicons/react/20/solid'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -34,36 +38,29 @@ export default function MenuPopup() {
                   href="/accounts"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
+                    "group flex items-center px-2 py-2 text-base font-medium rounded-md"
                   )}
                 >
-                  Account settings
+                  <UserIcon  className="flex mr-4 h-6 w-6 flex-shrink-0"
+                            aria-hidden="true">
+                  </UserIcon>
+                  My Account
                 </a>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/tutorials"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
+                    'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                   )}
                 >
-                  Support
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  License
+                  <VideoCameraIcon  className="flex mr-4 h-6 w-6 flex-shrink-0"
+                            aria-hidden="true">
+                  </VideoCameraIcon>
+                  Tutorials
                 </a>
               )}
             </Menu.Item>
@@ -74,10 +71,13 @@ export default function MenuPopup() {
                     type="submit"
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full px-4 py-2 text-left text-sm'
+                      'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                     )}
                   >
-                    Sign out
+                    <ArrowDownTrayIcon  className="flex mr-4 h-6 w-6 flex-shrink-0"
+                      aria-hidden="true">
+                    </ArrowDownTrayIcon>
+                    Logout
                   </button>
                 )}
               </Menu.Item>
