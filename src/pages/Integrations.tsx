@@ -3,6 +3,7 @@ import SideNavBar from "../components/SideNavBar";
 import Tabs from "../components/Tabs";
 import WidgetComponent from "../components/WidgetComponent";
 import IntegrationSection from "../components/IntegrationSection";
+import AddonsSection from "../components/AddonsSection";
 
 export default function Integrations() {
   const tabs = [
@@ -40,7 +41,7 @@ export default function Integrations() {
                 </div>
                 ): activeTab === tabs[2].name ? (
                 <div>
-                  
+                  <AddonsSection/>
                   
                 </div>
                 ) : null }

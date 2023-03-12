@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { createCustomer } from '../../redux/customer/customer.actions';
 // import { checkIsCustomer } from '../../redux/user/user.actions';
-import IntegrationCards from '../components/IntegrationCards';
+import IntegrationCards from './integration-cards';
 
 const StripeIntegrationCard = () => {
 //   const dispatch = useDispatch();
