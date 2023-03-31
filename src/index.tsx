@@ -10,10 +10,10 @@ import Branding from './pages/Branding';
 import Integrations from './pages/Integrations';
 import Marketing from './pages/Marketing';
 import Measurements from './pages/Measurements';
+import Accounts from './pages/Accounts';
 import Search from './pages/Search';
 import ServiceArea from './pages/ServiceArea';
 import Services from './pages/Services';
-import VideoTest from './pages/VideoTest'
 
 const router = createBrowserRouter([
   {
@@ -52,11 +52,7 @@ const router = createBrowserRouter([
   {
     path: '/accounts',
     element: <Accounts/>
-  },  
-  {
-    path: '/video-test',
-    element: <VideoTest/>
-  },  
+  },
 ])
 
 const root = ReactDOM.createRoot(
