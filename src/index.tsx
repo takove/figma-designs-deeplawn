@@ -13,6 +13,7 @@ import Measurements from './pages/Measurements';
 import Search from './pages/Search';
 import ServiceArea from './pages/ServiceArea';
 import Services from './pages/Services';
+import VideoTest from './pages/VideoTest'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ const router = createBrowserRouter([
   {
     path: '/services',
     element: <Services/>
+  },  
+  {
+    path: '/accounts',
+    element: <Accounts/>
+  },  
+  {
+    path: '/video-test',
+    element: <VideoTest/>
   },  
 ])
 

@@ -1,4 +1,5 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import VideoCard from './VideoCard'
 
 const people = [
   {
@@ -80,6 +81,7 @@ export default function Example() {
           </div>
         </li>
       ))}
+      <VideoCard/>
     </ul>
   )
 }
