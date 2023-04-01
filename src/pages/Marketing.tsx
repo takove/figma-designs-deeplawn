@@ -4,6 +4,7 @@ import Templates from '../components/Templates';
 import SearchButton from '../components/SearchButton';
 import Tabs from '../components/Tabs';
 import MarketingPopup from '../components/MarketingPopup';
+import Cards from '../components/Cards';
 
 export default function Marketing () {
   const [open, setOpen] = useState(false)
@@ -43,6 +44,7 @@ export default function Marketing () {
                 setOpen={setOpen}
                 />
                {/* End Replace */}
+               <Cards/>
               </div>
             </div>
           </main>
