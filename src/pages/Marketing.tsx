@@ -5,6 +5,7 @@ import SearchButton from '../components/SearchButton';
 import Tabs from '../components/Tabs';
 import MarketingPopup from '../components/MarketingPopup';
 import Cards from '../components/Cards';
+import PackagePreviewCards from '../components/PackagePreviewCards';
 
 export default function Marketing () {
   const [open, setOpen] = useState(false)
@@ -44,7 +45,7 @@ export default function Marketing () {
                 setOpen={setOpen}
                 />
                {/* End Replace */}
-               <Cards/>
+               <PackagePreviewCards/>
               </div>
             </div>
           </main>
