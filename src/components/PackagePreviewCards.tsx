@@ -68,13 +68,23 @@ export default function PackagePreviewCards() {
         <p className="font-bold mb-2 leading-5">$50</p>
 
         <p className="leading-5">This is a test service</p>
-        <div className="flex mt-2">
+        <div className="flex mt-2 md:justify-between">
+          <div className="flex">
           <CheckIcon />
-          <p className="ml-2">Service one x 1</p>
+          <div className="md:flex ">
+            <p className="ml-2">Service one x 1</p>
+          </div>
+          </div>
+          <p className="hidden md:flex float-right">$50</p>
         </div>
-        <div className="flex mt-2">
+        <div className="flex mt-2 md:justify-between">
+          <div className="flex">
           <CheckIcon />
-          <p className="ml-2">Service one x 2</p>
+          <div className="md:flex ">
+            <p className="ml-2">Service one x 2</p>
+          </div>
+          </div>
+          <p className="hidden md:flex float-right">$250</p>
         </div>
         <button className="border border-gray-200 py-2 px-4 rounded-lg flex text-center items-center mt-4 text-xs bg-white">
           <PlusIcon />
