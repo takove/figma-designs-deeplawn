@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import SideNavBar from '../components/SideNavBar';
-import Payments from "../components/Payments";
+import Suscriptions from "../components/MarketingSuscriptions";
 import DateDropdown from "../components/DateDropdown";
 import BillingHistory from "../components/BillingHistory";
 import PaymentInfo from "../components/PaymentInfo";
@@ -10,7 +10,7 @@ import Tabs from "../components/Tabs";
 export default function Accounts() {
   const [open, setOpen] = useState(false)
   const tabs = [
-    { name: 'Payments', href: '#', current: false },
+    { name: 'Suscriptions', href: '#', current: false },
     { name: 'Account', href: '#', current: false },
     { name: 'Payment Info', href: '#', current: true },
     { name: 'Billing History', href: '#', current: true },
@@ -54,9 +54,8 @@ export default function Accounts() {
             {activeTab === tabs[0].name ? (
                 <div>
                     <div className="py-4">
-                      Payments
                     </div>
-                    <Payments table={table}/>
+                    <Suscriptions />
                     {/* <ImportButton 
                     open={open}
                     setOpen={setOpen}
